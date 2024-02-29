@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#contents {
+    background: url(../../images/bg.jpg) no-repeat;
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+
+    position: relative;
+    /* 상위요소가 relative 속성이여야
+       자식요소가 absolute 일때 맞춰서 배치됨 */
+}
+h1 {
+    color: #fff;
+    font-size: 120px;
+    text-shadow: 2px 3px 0 #000;
+
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}

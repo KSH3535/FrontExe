@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 500px;
+            height: 200px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            line-height: 2;
+        }
+        #static {
+            position: static;
+            border: 1px solid red;
+        }
+        #relative-1 {
+            position: relative;
+            border: 1px solid gold;
+        }
+        #relative-2 {
+            position: relative;
+            left: 100px;
+            top: -50px;
+            border: 1px solid blue;
+        }
+        #fixed {
+            width: 300px;
+            height: 400px;
+            background: url(../images/cat.jpg);
+            position: fixed;
+            right: 30px;
+            top: 30px;
+        }
+        
+    </style>
+</head>
+<!-- 
+    [positon]
+    1) static       : 기본값, 문서의 흐름에 맞춰 배치
+    2) relative     : static과 동일하지만 위치값을 지정 가능
+    3) absolute     : relative를 사용한 상위 요소를 기준으로 위치값을 지정
+    4) fixed        : 브라우저 창을 기준으로 위치 지정
+ -->
+<body>
+    <p id="static">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p id="relative-1">Purus ut faucibus pulvinar elementum integer.</p>
+    <p id="relative-2">Elementum eu facilisis sed odio morbi quis commodo odio aenean.Vulputate ut pharetra sit amet aliquam id. Posuere morbi leo urna molestie at elementum eu.</p>
+    <p id="fixed"></p>
+    <p>Leo urna molestie at elementum eu.Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Congue eu consequat ac felis donec et odio pellentesque diam.</p>
+    <p>Leo urna molestie at elementum eu.Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Congue eu consequat ac felis donec et odio pellentesque diam.</p>
+    <p>Leo urna molestie at elementum eu.Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Congue eu consequat ac felis donec et odio pellentesque diam.</p>
+    <p>Leo urna molestie at elementum eu.Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Congue eu consequat ac felis donec et odio pellentesque diam.</p>
+    <p>Leo urna molestie at elementum eu.Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Congue eu consequat ac felis donec et odio pellentesque diam.</p>
+</body>
+</html>
