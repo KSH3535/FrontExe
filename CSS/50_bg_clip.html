@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .desc {
+            border: 5px dotted #222;
+            background-color: #ffd9a0;
+            width: 350px;
+            padding: 20px;
+            margin-right: 20px;
+            float: left;
+        }
+        #clip-border {
+            /* background-clip : 요소의 배경이 어디가지 차지할지 정하는 속성 */
+            background-clip: border-box;                          /*기본값*/
+        }
+        #clip-padding {
+            background-clip: padding-box;
+        }
+        #clip-content {
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="desc" id="clip-border">
+            <h1>블루베리</h1>
+            <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과 식물[1]이다. 꽃말은 현명과 친절이다.</p>
+            <p>이름은 <em>블루베리(Blueberry)</em>지만, 파란색이 아닌 검은색에 가까운 어두운 남보라색이다.[2] 게다가 시력 회복과 뇌세포 <b>노화 방지에 좋은 안토시아닌</b> 성분이 껍질에 고농도로 축적될수록 더욱 검은색[3]에 가까워지기 때문에 이조차도 케바케다.<br> 사실 수확 전 조금 덜 익은 상태에선 확실하게 파란색에 가깝긴 한데[4] 익어서 수확되는 것들 + 냉동들은 죄다 어두운 남보라색~검은색이 된다. 즉 안토시아닌이 더 농축된다.</p>
+        </div>
+        <div class="desc" id="clip-padding">
+            <h1>블루베리</h1>
+            <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과 식물[1]이다. 꽃말은 현명과 친절이다.</p>
+            <p>이름은 <em>블루베리(Blueberry)</em>지만, 파란색이 아닌 검은색에 가까운 어두운 남보라색이다.[2] 게다가 시력 회복과 뇌세포 <b>노화 방지에 좋은 안토시아닌</b> 성분이 껍질에 고농도로 축적될수록 더욱 검은색[3]에 가까워지기 때문에 이조차도 케바케다.<br> 사실 수확 전 조금 덜 익은 상태에선 확실하게 파란색에 가깝긴 한데[4] 익어서 수확되는 것들 + 냉동들은 죄다 어두운 남보라색~검은색이 된다. 즉 안토시아닌이 더 농축된다.</p>
+        </div>
+        <div class="desc" id="clip-content">
+            <h1>블루베리</h1>
+            <p>북아메리카를 비롯한 북반구 전역에 분포하는 식물 및 열매. 이름과 달리 딸기, 라즈베리, 블랙베리 등의 베리류와는 전혀 관계가 없는 진달래과 식물[1]이다. 꽃말은 현명과 친절이다.</p>
+            <p>이름은 <em>블루베리(Blueberry)</em>지만, 파란색이 아닌 검은색에 가까운 어두운 남보라색이다.[2] 게다가 시력 회복과 뇌세포 <b>노화 방지에 좋은 안토시아닌</b> 성분이 껍질에 고농도로 축적될수록 더욱 검은색[3]에 가까워지기 때문에 이조차도 케바케다.<br> 사실 수확 전 조금 덜 익은 상태에선 확실하게 파란색에 가깝긴 한데[4] 익어서 수확되는 것들 + 냉동들은 죄다 어두운 남보라색~검은색이 된다. 즉 안토시아닌이 더 농축된다.</p>
+        </div>
+    </div>
+</body>
+</html>
