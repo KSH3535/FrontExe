@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 첫번째 매개변수는 무조건 입력, 나머지는 가변 매개변수 가능
+        function min(first, ...rests) {
+            let min;
+            let items;
+
+            // first 인자가 배열이니?
+            if(Array.isArray(first)) {
+                min = first[0];
+                items = first;
+            } 
+            // first 인자가 number 타입이니?
+            else if(typeof(first)==='number') {
+                min = first;
+                items = rests;
+            }
+
+            // 최소값 찾는 로직
+            for(const item of items) {
+                if(min > item)
+                    min = item;
+            }
+
+            return min;
+        }
+
+        // 배열(객체)를 매개변수로 줬을 경우 min(first)에만 입력됨
+        console.log(`min(배열) : ${min([32, 77, 10, 5, 100])}`);
+        // 단순 여러개 매개변수를 줬을 경우 min(first, ...rests)에 순차적으로 입력됨
+        console.log(`min(숫자, ...) : ${min(32, 77, 10, 5, 100)}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
