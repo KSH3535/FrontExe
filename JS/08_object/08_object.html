@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 빈 배열 생성
+        const a = [];
+        //동적 요소 추가
+        a.sample = 10;
+
+        console.log(a.sample);
+        console.log(typeof a);
+        console.log(Array.isArray(a));      // a가 배열인지 확인
+        console.log('');
+
+        // 빈 함수 생성         -> 함수(객체)도 일급 객체
+        function b(){ }; 
+        // 동적 요소 추가
+        b.sample = 10;
+
+        console.log(b.sample);
+        console.log(typeof b);
+        console.log(Array.isArray(b));      // b가 배열인지 확인
+        console.log('');
+
+        // 기본 타입 number
+        const c = 273;              // 기본 타입 number
+        c.sample = 10;              // 일시적으로 객체 타입 'Number'로 변환
+        console.log(c);             
+        console.log(c.sample);      // 에러가 아닌 undefined 발생
+        console.log(typeof c);
+        console.log(c.sample = '감사합니다.');      // 일시적으로 객체 타입 Number로 변환
+        console.log(c.sample);
+        console.log('');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const i = '안녕하세요';
+        // string -> String
+        console.log(i.indexOf('안녕'));         // 0
+        console.log(i.indexOf('하세'));         // 2
+        console.log(i.indexOf('korea'));        // -1
+
+        const j = [1, 2, 3];             
+        console.log(j.indexOf(2));              // 1
+        console.log(j.indexOf(3));              // 2
+        console.log(j.indexOf(100));            // -1
+
+        String.prototype.contain = function(data) {
+            return this.indexOf(data) >= 0;
+        }
+
+        Array.prototype.contain = function(data) {
+            return this.indexOf(data) >= 0;
+        }
+
+        const a = '안녕하세요';
+        console.log('안녕 in 안녕하세요 : ', a.contain('안녕'));        // true
+        console.log('korea in 안녕하세요 : ', a.contain('korea'));      // false
+
+        const b = [273, 32, 103, 75, 33];
+        console.log('103 in b : ' + b.contain(103));        // true
+        console.log('100 in b : ' + b.contain(100));        // false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
