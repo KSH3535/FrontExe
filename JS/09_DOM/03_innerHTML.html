@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const h1 = (text) => `<h1>${text}</h1>`;
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('1번째 DOMContentLoaded 이벤트 발생');
+
+            document.body.innerHTML += h1('1번째 script 태그');
+        });
+
+
+        /* 아래처럼 window.onload 해도 무방하나,
+           성능은 위의 것 document.addEventListener 이 더 좋다고 알려져 있다.*/
+        window.onload = function() {
+            console.log('2번째 load 이벤트 발생');
+            document.body.innerHTML += h1('2번째 load 이벤트 발생');
+        }
+
+        window.addEventListener('load', function() {
+            console.log('3번째 load 이벤트 발생');
+            document.body.innerHTML += h1('3번째 load 이벤트 발생');
+        })
+
+
+        // load보다 먼저 처리됨
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('4번째 DOMContentLoaded 이벤트 발생');
+
+            document.body.innerHTML += h1('4번째 script 태그');
+        });
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>

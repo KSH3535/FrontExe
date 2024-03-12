@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const a = document.querySelector('#a');
+            const b = document.querySelector('#b');
+            const c = document.querySelector('#c');
+
+            // textContent  : ''사이 문자열 그대로 삽입
+            // innerHTML    : html 요소로 인식하고 태그 제외하고 삽입
+            // innerText    : textContent와 같은 기능이나 성능이 떨어짐
+            a.textContent = '<h1>textContent 속성</h1>';
+            b.innerHTML = '<h1>innerHTML 속성</h1>';
+            c.innerText = '<h1>innerText 속성</h1>';
+        })
+    </script>
+</head>
+<body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+</body>
+</html>
