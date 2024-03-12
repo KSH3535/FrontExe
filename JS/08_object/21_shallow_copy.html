@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        foodArr은 객체를 참조값으로 가리키고 있다.
+        그래서 const foods = foodArr;를 하게 되면
+        foods와 foodArr은 모두 동일한 객체를 가리키게 된다.
+        그래서 아래와 같은 결과가 나온다.
+        */
+        const foodArr = ['우유', '식빵'];
+        const foods = foodArr;              // 참조값(객체) 복사 - 얉은 복사
+        foodArr.push('라면');
+        foods.push('바나나');
+
+        console.log(foodArr);
+        console.log(foods);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
