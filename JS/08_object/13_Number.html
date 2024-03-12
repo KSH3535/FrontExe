@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const i = 123.456789;
+
+        // .toFixed() : 소수점 몇째자리까지
+        console.log(i.toFixed(2));          // 123.46
+        console.log(i.toFixed(3));          // 123.457
+        console.log(i.toFixed(4));          // 123.4568
+        console.log('');
+
+        // .isNaN() : 숫자인지 아닌지 판단
+        const m = Number('korea');         // 'korea' -> 숫자로 변환 시도
+        console.log(m);                    // NaN : Not a Number
+        console.log(m === NaN);            // false  (비교 불가)
+        console.log(Number.isNaN(m));      // true
+        console.log('');
+
+        // .isFinite() : 유한한 값인지 판단
+        const n = 10 / 0;
+        console.log(n);                    // Infinity
+        const o = -10 / 0;
+        console.log(o);                    // -Infinity
+        console.log(Number.isFinite(n));   // false
+        console.log(Number.isFinite(n));   // false
+        console.log(Number.isFinite(10));  // true
+        console.log(n === Infinity);       // true  (비교 가능)
+        console.log(o === Infinity);       // true
+        console.log('');
+
+        //.trim() : \t, \n과 같은 '양쪽' 개행 문자나 공백 제거
+        const stringA ='\n메시지를 입력했는데 줄바꿈이 들어갔다.';
+        console.log(stringA);
+        const stringB = `    앞과 뒤에 공백이 들어갔다.    `;
+        console.log(stringB);
+
+        console.log(stringA.length);        // 22
+        console.log(stringB.length);        // 22
+        console.log(stringA.trim());
+        console.log(stringB.trim());
+    </script>   
+</head>
+<body>
+    
+</body>
+</html>
