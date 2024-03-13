@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* textarea를 상위 지역변수로 선언했으므로 접근 가능 */
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea');
+            const h1 = document.querySelector('h1');
+
+            textarea.addEventListener('keyup', (event) => {
+                const length = textarea.value.length;       // textarea에 입력된 글자 수
+                h1.textContent = `글자 수 : ${length}`;
+            });
+        });
+
+
+        /* textarea가 콜백함수의 지역변수이므로 다른 함수에서 접근이 불가 */
+        const listener = (event) => {
+            const length = textarea.value.length;
+            // Uncaught ReferenceError: textarea is not defined
+            h1.textContent = `글자 수 : ${length}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea');
+            const h1 = document.querySelector('h1');
+
+            textarea.addEventListener('keyup', listener);
+        });
+
+
+        let h1 = null;      // h1은 event와 관계가 없어 textarea처럼 접근불가능하여, 우선 전역변수로 빼둠
+
+        /* 다른 영역의 textarea를 접근하는 방법 - 1) currentTarget */
+        const listener = (event) => {
+            // event를 발생 시킨 객체
+            const textarea = event.currentTarget;
+
+            const length = textarea.value.length;
+            h1.textContent = `글자 수 : ${length}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea');
+            h1 = document.querySelector('h1');
+
+            textarea.addEventListener('keyup', listener);
+        });
+
+         
+        /* 다른 영역의 textarea를 접근하는 방법 - 2) function(event) */
+         const listener = function(event) {
+            // 화살표 함수에서는 this를 사용하지 못함
+            // function(event)를 사용하면 listener의 this는 textarea를 가리키게 된다.
+            const textarea = this;
+
+            const length = textarea.value.length;
+            h1.textContent = `글자 수 : ${length}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea');
+            h1 = document.querySelector('h1');
+
+            textarea.addEventListener('keyup', listener);
+        });
+
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+</body>
+</html>
