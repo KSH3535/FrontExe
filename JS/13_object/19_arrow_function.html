@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Prefixer {
+            constructor(prefix) {
+                this.prefix = prefix;
+            }
+
+            // 3) 매개 변수로 this 전달 - Array.prototype.map의 2번째 인자로 this를 전달
+            add(arr) {
+                
+                return arr.map(function (item) {
+                    return this.prefix + item;      
+                }, this);
+            }
+        }
+
+        const prefixer = new Prefixer('-Webkit-');
+        console.log(prefixer.add(['trasition', 'user-select']));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
