@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 클래스
+        class Student {
+            // 생성자 함수
+            constructor(name, kor, math, eng, sci) {
+                this.name = name;
+                this.kor = kor;
+                this.math = math;
+                this.eng = eng;
+                this.sci = sci;
+            }
+
+            toString() {
+                return `${this.name}\t${this.kor}\t${this.math}\t${this.eng}\t${this.sci}\n`;
+            }
+        }
+
+        const student = new Student();
+
+        const students = [
+            new Student('홍길동', 74, 88, 90, 80),
+            new Student('임꺽정', 55, 80, 100, 99),
+            new Student('장길산', 89, 100, 78, 78),
+            new Student('일지매', 99, 88, 85, 100)
+        ]
+
+        let output = '';
+        for(const s of students)
+            output += s;
+
+        console.log(output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
