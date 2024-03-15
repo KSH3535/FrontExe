@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Square {
+            // 필드나 메서드에 #을 붙여주면 'private' 으로 사용됨
+            #length;
+            
+            constructor(length) {
+                if(length <= 0)
+                    throw '길이는 0보다 커야 합니다.';
+
+                this.#length = length;
+            }
+            getPerimeter() {
+                return 4 * this.#length
+            }
+            getArea() {
+                return this.#length * this.#length;
+            }
+        }
+
+        
+
+        const square = new Square(10);
+        // square.#length = -100;           // Uncaught SyntaxError: Private field '#length' must be declared in an enclosing class
+        square.length = -100;               // #length에 값이 전달 안됨, 그냥 동적 추가한 length 필드가 됨
+
+        console.log(`정사각형의 둘레 : ${square.getPerimeter()}`);
+        console.log(`정사각형의 넓이 : ${square.getArea()}`);
+        console.log(square.length);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
